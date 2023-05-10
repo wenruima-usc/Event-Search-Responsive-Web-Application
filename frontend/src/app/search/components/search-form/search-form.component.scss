@@ -1,0 +1,23 @@
+@font-face {
+    font-family: doulossilcompact-r;
+        src:url("../../../../assets/fonts/doulossilcompact-r.ttf");
+    }
+    
+
+.card{
+    backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+}
+.card-title{
+    color:white;
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    font-size: 40px;
+    font-family: doulossilcompact-r;
+}
+label{
+	color: #79A3BE;
+	font-size: 15px;
+}

@@ -1,0 +1,65 @@
+<div class="card mt-5 col-md-5 mx-auto">
+    <div class="card-body">
+        <div class="card-title pt-4">
+            Events Search
+        </div>
+        <form class="mb-4" ngNativeValidate [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="keyword">Keyword<span style="color: red">*</span></label>
+                    <input type="text" id="keyword" required class="form-control" [matAutocomplete]="auto"
+                    (input)="onInputChange($event)" formControlName="keyword"
+                    >
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <div *ngIf="isLoading"><mat-option><mat-progress-spinner diameter="20" mode="indeterminate"></mat-progress-spinner></mat-option></div>
+                        <div *ngIf="!isLoading">
+                        <mat-option *ngFor="let option of options" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </div>
+                    </mat-autocomplete>           
+                </div>            
+            </div> 
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="distance">Distance</label>
+                    <input type="number" id="distance" placeholder="10" class="form-control" formControlName="distance">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="category">Category<span style="color: red;">*</span></label>
+                    <select id="category" class="form-control" formControlName="category">
+                        <option>Default</option>
+                        <option>Music</option>
+                        <option>Sports</option>
+                        <option>Arts & Theatre</option>
+                        <option>Film</option>
+                        <option>Miscellaneous</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="location">Location<span style="color: red">*</span></label>
+                    <input type="text" id="location" class="form-control" formControlName="location" required>
+                </div>            
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" (change)="onCheckboxChange($event)" formControlName="auto">
+                    <label class="form-check-label" for="gridCheck">
+                    Auto-detect your location
+                    </label>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="mr-2">
+                  <button type="submit" class="btn btn-danger">SUBMIT</button>
+                </div>
+                <div class="ml-2">
+                  <button type="reset" class="btn btn-primary" (click)="clearAll()">CLEAR</button>
+                </div>
+              </div>
+        </form>  
+    </div>
+</div>
+

@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "geo-hash": "^0.0.2",
+    "geohash": "^0.0.1",
+    "ngeohash": "^0.6.3",
+    "node-fetch": "^2.6.9",
+    "spotify-web-api-node": "^5.0.2"
+  }
+}
